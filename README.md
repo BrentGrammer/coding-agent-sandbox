@@ -25,6 +25,13 @@ Runs a fully sand-boxed A.I. agent using Aider and Ollama model using Docker San
 
 - `make up`
   - NOTE: if you make changes to the Dockerfile, increment the tag version and push again with `make push`
+- start aider:
+
+```shell
+aider --model ollama/${MODEL} --yes --no-auto-commits --chat-mode code
+# to bring in all project initially:
+aider --model ollama/${MODEL} --yes --no-auto-commits --chat-mode code .
+```
 
 ### Quitting Ollama
 
@@ -58,4 +65,15 @@ Make sure your agent's environment variables are set like this so it doesn't try
 
 ## Aider Usage Tips
 
-- Ollama can be slow with Aider if the chat history gets too long. Periodically use /clear in Aider to keep the "brain" fresh once a file is working.
+- use `/clear` occasionally to clear the context window esp when using Ollama with Aider
+- If you want Aider to know about a file but you don't want it to edit it (which saves tokens and prevents accidental bugs), use:
+
+```Bash
+/read-only path/to/file.py
+```
+
+- You can also launch Aider and tell it to include everything in the workspace folder immediately from your terminal:
+
+```Bash
+aider --model ollama/${MODEL} --yes --no-auto-commits --chat-mode code .
+```
