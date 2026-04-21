@@ -65,6 +65,8 @@ Make sure your agent's environment variables are set like this so it doesn't try
 
 ## Aider Usage Tips
 
+- run `/tokens` to view the context window for checking
+
 - use `/clear` occasionally to clear the context window esp when using Ollama with Aider
 - If you want Aider to know about a file but you don't want it to edit it (which saves tokens and prevents accidental bugs), use:
 
