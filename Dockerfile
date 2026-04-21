@@ -14,6 +14,8 @@ RUN useradd -ms /bin/bash agent && \
 RUN pip install --no-cache-dir aider-chat
     
 ENV OLLAMA_API_BASE="http://host.docker.internal:11434"
+# This needs to match what you pulled on your host machine
+ENV MODEL="qwen2.5-coder:14b"
 
 # Set the working directory to where your code will be mounted
 WORKDIR /app
