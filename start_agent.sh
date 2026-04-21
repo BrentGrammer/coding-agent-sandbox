@@ -3,7 +3,7 @@
 set -e
 
 export OLLAMA_API_BASE="http://host.docker.internal:11434"
-export MODEL="qwen2.5-coder:14b"
+# export MODEL="qwen2.5-coder:14b"
 
 echo "Checking Docker daemon..."
 if ! docker info > /dev/null 2>&1; then

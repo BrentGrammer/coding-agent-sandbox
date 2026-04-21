@@ -1,0 +1,15 @@
+- name: ollama/qwen3.6:35b
+  edit_format: diff
+  use_repo_map: true
+  reasoning_tag: think
+  extra_params:
+    num_ctx: 32768
+    temperature: 0.0
+    # THIS IS THE SWITCH:
+    preserve_thinking: true
+
+# aider --model ollama/qwen3.6:35b --yes --no-auto-commits .
+# this settings file does not seem to work.
+
+
+# aider --model ollama/qwen3.6:35b --model-settings-file aider.model.settings.yml --yes --no-auto-commits .
