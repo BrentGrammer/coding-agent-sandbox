@@ -70,6 +70,9 @@ Make sure your agent's environment variables are set like this so it doesn't try
 
 ## Aider Usage Tips
 
+- run `/ls` to see what files are added to its context
+- use `/read PROJECT.md` to make a spec file readonly but in context
+
 - run `/tokens` to view the context window for checking
 
 - use `/clear` occasionally to clear the context window esp when using Ollama with Aider
