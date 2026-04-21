@@ -27,5 +27,8 @@ up:
 	# Run the sandbox
 	sbx run --name $(PROJECT) --template $(FULL_IMAGE) shell .
 
+agent:
+	./start_agent.sh
+
 clean:
 	sbx rm $(PROJECT)

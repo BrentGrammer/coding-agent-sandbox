@@ -23,8 +23,7 @@ Runs a fully sand-boxed A.I. agent using Aider and Ollama model using Docker San
 
 ## Running the environment
 
-- `make push` - builds and pushes base image with aider to docker hub
-- `make up` - runs the sandbox using the image
+- `make up`
   - NOTE: if you make changes to the Dockerfile, increment the tag version and push again with `make push`
 
 ### Quitting Ollama
@@ -56,3 +55,7 @@ Make sure your agent's environment variables are set like this so it doesn't try
 `OLLAMA_HOST: http://host.docker.internal:11434`
 
 - In "Locked Down" mode, if your agent tries to use a curl or git clone command to a site you haven't whitelisted, it will fail silently or hang. Keep an eye on your terminal for proxy block notifications!
+
+## Aider Usage Tips
+
+- Ollama can be slow with Aider if the chat history gets too long. Periodically use /clear in Aider to keep the "brain" fresh once a file is working.
