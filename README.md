@@ -81,3 +81,8 @@ aider --model ollama/${MODEL} --yes --no-auto-commits .
 ```
 
 - see chat mode options you can use: https://aider.chat/docs/usage/modes.html
+
+### Make a Project Goal or Vision md file
+
+- Make a .md file and make it read only to aider for overall project goal and vision
+  - `/read PROJECT_GOAL.md`
