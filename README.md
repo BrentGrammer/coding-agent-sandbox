@@ -28,9 +28,9 @@ Runs a fully sand-boxed A.I. agent using Aider and Ollama model using Docker San
 - start aider:
 
 ```shell
-aider --model ollama/${MODEL} --yes --no-auto-commits --chat-mode code
+aider --model ollama/${MODEL} --yes --no-auto-commits
 # to bring in all project initially:
-aider --model ollama/${MODEL} --yes --no-auto-commits --chat-mode code .
+aider --model ollama/${MODEL} --yes --no-auto-commits .
 ```
 
 ### Quitting Ollama
@@ -75,7 +75,7 @@ Make sure your agent's environment variables are set like this so it doesn't try
 - You can also launch Aider and tell it to include everything in the workspace folder immediately from your terminal:
 
 ```Bash
-aider --model ollama/${MODEL} --yes --no-auto-commits --chat-mode code .
+aider --model ollama/${MODEL} --yes --no-auto-commits .
 ```
 
 - see chat mode options you can use: https://aider.chat/docs/usage/modes.html
