@@ -77,3 +77,5 @@ Make sure your agent's environment variables are set like this so it doesn't try
 ```Bash
 aider --model ollama/${MODEL} --yes --no-auto-commits --chat-mode code .
 ```
+
+- see chat mode options you can use: https://aider.chat/docs/usage/modes.html
