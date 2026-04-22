@@ -109,6 +109,8 @@ venv.bak
 # mypy
 .mypy_cache/
 
+.env
+
 # pyre type checker results
 .pyre/
 
@@ -125,3 +127,4 @@ cache.db-shm
 cache.db-wal
 .aider.chat.history.md
 .aider.input.history
+.aider*

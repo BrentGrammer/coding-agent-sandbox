@@ -12,15 +12,20 @@ RUN useradd -ms /bin/bash agent && \
     
 # Install Aider globally
 RUN pip install --no-cache-dir aider-chat
-    
-ENV OLLAMA_API_BASE="http://host.docker.internal:11434"
-# This needs to match what you pulled on your host machine
-# ENV MODEL="qwen2.5-coder:14b"
-ENV MODEL="qwen3.6:35b"
+
+# Install Gemini Skills (Global)
+# We use --yes to skip prompts during docker build
+RUN npx --yes skills add google-gemini/gemini-skills --skill gemini-api-dev --global
+
+# This needs to match what you pulled on your host machine. pass the api key via a shell script, do not bake in since it is public
+ENV GEMINI_API_KEY="pass_in_shell_command"
+ENV MODEL="gemini/gemini-3.1-pro-preview"
 
 # Set the working directory to where your code will be mounted
 WORKDIR /app
 
 COPY ./.aider.model.settings.yml .
+RUN chown agent:agent /app/.aider.model.settings.yml
+
 RUN chown agent:agent /app
 USER agent

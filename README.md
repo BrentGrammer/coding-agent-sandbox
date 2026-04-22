@@ -24,24 +24,21 @@ Runs a fully sand-boxed A.I. agent using Aider and Ollama model using Docker San
 
 ## Running the environment
 
-- `make up`
+- `make agent`
   - NOTE: if you make changes to the Dockerfile, increment the tag version and push again with `make push`
 - start aider:
 
 ```shell
-aider --model ollama/${MODEL} --yes --no-auto-commits
+aider --model ${MODEL} --yes --no-auto-commits
 # to bring in all project initially:
-aider --model ollama/${MODEL} --yes --no-auto-commits .
-
-# or for newer models?
-aider --model ollama_chat/${MODEL} --yes --no-auto-commits .
-
+aider --model ${MODEL} --yes --no-auto-commits .
 ```
 
 ### Quitting Ollama
 
 - In the running terminal, press CTRL-C
 - Run `pkill ollama`
+- `make clean` - removes sbx project and stops sbx and ollama
 
 ## Usage notes
 
