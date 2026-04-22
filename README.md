@@ -94,3 +94,7 @@ aider --model ollama/${MODEL} --yes --no-auto-commits .
 
 - Make a .md file and make it read only to aider for overall project goal and vision
   - `/read PROJECT_GOAL.md`
+
+  ### stopping sandbox
+
+  - To free up RAM you can stop sandbox with: `killall sbx`

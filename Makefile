@@ -32,3 +32,4 @@ agent:
 
 clean:
 	sbx rm $(PROJECT)
+	killall sbx
