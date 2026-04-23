@@ -1,6 +1,6 @@
 DOCKER_USER=brentgrammer
 IMAGE_NAME=$(DOCKER_USER)/aider-sandbox
-TAG=usegeminiv5
+TAG=usegeminiv9
 FULL_IMAGE=docker.io/$(IMAGE_NAME):$(TAG)
 
 PROJECT=aider-sandbox
@@ -12,7 +12,7 @@ build:
 push: build
 	docker push $(IMAGE_NAME):$(TAG)
 
-up:
+up: down
 	-sbx policy allow network registry.npmjs.org
 	-sbx policy allow network debian.org
 	-sbx policy allow network ports.ubuntu.com
@@ -29,9 +29,9 @@ up:
 	echo "🏗️  Creating sandbox in background..."
 	sbx create --name $(PROJECT) --template $(FULL_IMAGE) shell .
 	echo "🔐 Injecting keys into /etc/sandbox-persistent.sh..."
-	sbx exec $(PROJECT) bash -c "echo 'export GEMINI_API_KEY=$$GEMINI_API_KEY' | sudo tee /etc/sandbox-persistent.sh"
-	sbx exec $(PROJECT) bash -c "echo 'export MODEL=$$MODEL' | sudo tee -a /etc/sandbox-persistent.sh"
-	sbx exec $(PROJECT) bash -c "echo 'export SBX_NO_TELEMETRY=1' | sudo tee -a /etc/sandbox-persistent.sh"
+# 	sbx exec $(PROJECT) bash -c "echo 'export GEMINI_API_KEY=$$GEMINI_API_KEY' | sudo tee /etc/sandbox-persistent.sh"
+# 	sbx exec $(PROJECT) bash -c "echo 'export MODEL=$$MODEL' | sudo tee -a /etc/sandbox-persistent.sh"
+# 	sbx exec $(PROJECT) bash -c "echo 'export SBX_NO_TELEMETRY=1' | sudo tee -a /etc/sandbox-persistent.sh"
 	echo "🚀 Everything is ready. Entering sandbox..."
 	sbx run $(PROJECT)
 
@@ -43,5 +43,6 @@ down:
 
 clean:
 	sbx rm $(PROJECT)
+	docker images --format "{{.Repository}} {{.ID}}" | grep "^$(IMAGE_NAME)" | awk '{print $2}' | xargs -r docker rmi -f
 	killall sbx
 	pkill ollama
