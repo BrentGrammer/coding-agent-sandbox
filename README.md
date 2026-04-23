@@ -19,7 +19,10 @@ Runs a fully sand-boxed A.I. agent using Aider and Gemini model using Docker San
 
 - `make agent`
   - NOTE: if you make changes to the Dockerfile, increment the tag version and push again with `make push`
-- start aider:
+- `chmod +x ./start_aider.sh`
+- `./start_aider.sh`
+
+  OR
 
 ```shell
 aider --model ${MODEL} --yes --no-auto-commits

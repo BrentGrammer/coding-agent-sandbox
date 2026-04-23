@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+# need to run chmod +x ./start_aider.sh
+# ./start_aider.sh
+
 set -e
 
 if [ -f .env ]; then
