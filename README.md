@@ -53,7 +53,6 @@ After pulling a new model, change the `MODEL=` line in `start-agent.sh` (e.g., `
 - If you get a Connection Refused or Network Unreachable error while the agent is working, just run this command on your Mac to fix it:
   `docker sandbox network proxy [sandbox-name] --allow-host [the-domain-it-tried-to-reach]`
 
-
 - In "Locked Down" mode, if your agent tries to use a curl or git clone command to a site you haven't whitelisted, it will fail silently or hang. Keep an eye on your terminal for proxy block notifications!
 
 ## Aider Usage Tips
@@ -84,5 +83,11 @@ aider --model ${MODEL} --yes --no-auto-commits .
   - `/read PROJECT_GOAL.md`
 
   ### stopping sandbox
-
   - To free up RAM you can stop sandbox with: `killall sbx`
+
+## Troubleshooting
+
+- Invalid API key - aider tries to use a Google Studio AI api key to connect to Google Vertex AI:
+  - See .env.template file - need to explicitly clear VERTEX AI env variables
+  - Use a GOOGLE_API_KEY in the environment as well
+  - Specify the LITELLM_PROVIDER as gemini
