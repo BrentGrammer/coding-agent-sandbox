@@ -1,6 +1,6 @@
 # A.I. Coding Agent setup
 
-Runs a fully sand-boxed A.I. agent using Aider and Ollama model using Docker Sandbox
+Runs a fully sand-boxed A.I. agent using Aider and Gemini model using Docker Sandbox
 
 ## Pre-requisites
 
@@ -14,13 +14,6 @@ Runs a fully sand-boxed A.I. agent using Aider and Ollama model using Docker San
       sbx policy deny network <host>
       ```
 - Homebrew (macOS)
-- Ollama Model installed locally
-  - `brew install ollama`
-- Install the models (one time installation)
-  - `brew serve ollama`
-  - Leave that terminal window open. (If you close it, the server stops). Open a NEW terminal tab or window (Cmd + T) and pull in the model
-    - `ollama pull qwen2.5-coder:14b`
-  NOTE: if model changes remember to update the dockerfile env var: `ENV MODEL="qwen3.6:35b"` and increment the tag version in the Makefile for the image.
 
 ## Running the environment
 
@@ -60,8 +53,6 @@ After pulling a new model, change the `MODEL=` line in `start-agent.sh` (e.g., `
 - If you get a Connection Refused or Network Unreachable error while the agent is working, just run this command on your Mac to fix it:
   `docker sandbox network proxy [sandbox-name] --allow-host [the-domain-it-tried-to-reach]`
 
-Make sure your agent's environment variables are set like this so it doesn't try to look for Ollama in the wrong place:
-`OLLAMA_HOST: http://host.docker.internal:11434`
 
 - In "Locked Down" mode, if your agent tries to use a curl or git clone command to a site you haven't whitelisted, it will fail silently or hang. Keep an eye on your terminal for proxy block notifications!
 
@@ -82,7 +73,7 @@ Make sure your agent's environment variables are set like this so it doesn't try
 - You can also launch Aider and tell it to include everything in the workspace folder immediately from your terminal:
 
 ```Bash
-aider --model ollama/${MODEL} --yes --no-auto-commits .
+aider --model ${MODEL} --yes --no-auto-commits .
 ```
 
 - see chat mode options you can use: https://aider.chat/docs/usage/modes.html
