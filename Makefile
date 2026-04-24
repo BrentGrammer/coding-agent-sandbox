@@ -12,7 +12,7 @@ build:
 push: build
 	docker push $(IMAGE_NAME):$(TAG)
 
-up:
+up: down
 	-sbx policy allow network localhost:11434
 	-sbx policy allow network host.docker.internal:11434
 	-sbx policy allow network registry.npmjs.org
@@ -30,6 +30,11 @@ up:
 agent:
 	./start_agent.sh
 
+down:
+	sbx rm $(PROJECT) || true
+
 clean:
 	sbx rm $(PROJECT)
+	docker images --format "{{.Repository}} {{.ID}}" | grep "^$(IMAGE_NAME)" | awk '{print $2}' | xargs -r docker rmi -f
 	killall sbx
+	pkill ollama
