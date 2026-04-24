@@ -9,9 +9,13 @@ RUN apt-get update && apt-get install -y \
 # Create the 'agent' user (required by sbx for many templates)
 RUN useradd -ms /bin/bash agent && \
     echo "agent ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+RUN pip install --upgrade pip
     
 # Install Aider globally
 RUN pip install --no-cache-dir aider-chat
+
+RUN pip install --no-cache-dir --upgrade aider-chat
 
 # Bedrock Deepseek model requires Boto3 globally
 RUN pip install --no-cache-dir --upgrade --upgrade-strategy only-if-needed boto3
@@ -21,6 +25,5 @@ RUN pip install --no-cache-dir --upgrade --upgrade-strategy only-if-needed boto3
 # Set the working directory to where your code will be mounted
 WORKDIR /app
 
-COPY ./.aider.model.settings.yml .
 RUN chown agent:agent /app
 USER agent

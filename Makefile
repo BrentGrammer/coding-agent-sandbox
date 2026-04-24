@@ -2,7 +2,7 @@ include .env
 export $(shell sed 's/=.*//' .env)
 
 IMAGE_NAME=$(DOCKER_USER)/aider-sandbox
-TAG=bedrockv2
+TAG=bedrockv4
 FULL_IMAGE=docker.io/$(IMAGE_NAME):$(TAG)
 
 PROJECT=aider-sandbox
