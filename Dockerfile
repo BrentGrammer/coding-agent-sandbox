@@ -12,11 +12,11 @@ RUN useradd -ms /bin/bash agent && \
     
 # Install Aider globally
 RUN pip install --no-cache-dir aider-chat
+
+# Bedrock Deepseek model requires Boto3 globally
+RUN pip install --no-cache-dir --upgrade --upgrade-strategy only-if-needed boto3
     
-ENV OLLAMA_API_BASE="http://host.docker.internal:11434"
-# This needs to match what you pulled on your host machine
-# ENV MODEL="qwen2.5-coder:14b"
-ENV MODEL="qwen3.6:35b"
+# ENV OLLAMA_API_BASE="http://host.docker.internal:11434"
 
 # Set the working directory to where your code will be mounted
 WORKDIR /app

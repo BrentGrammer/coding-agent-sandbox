@@ -2,7 +2,7 @@ include .env
 export $(shell sed 's/=.*//' .env)
 
 IMAGE_NAME=$(DOCKER_USER)/aider-sandbox
-TAG=v6
+TAG=bedrockv2
 FULL_IMAGE=docker.io/$(IMAGE_NAME):$(TAG)
 
 PROJECT=aider-sandbox
@@ -18,6 +18,8 @@ up: down
 	-sbx policy allow network localhost:11434
 	-sbx policy allow network host.docker.internal:11434
 	-sbx policy allow network registry.npmjs.org
+	# for AWS bedrock - depends on region
+	-sbx policy allow network bedrock-runtime.us-west-2.amazonaws.com
 	-sbx policy allow network debian.org
 	-sbx policy allow network ports.ubuntu.com
 	-sbx policy allow download.docker.com
