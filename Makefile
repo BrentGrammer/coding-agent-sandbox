@@ -1,4 +1,6 @@
-DOCKER_USER=brentgrammer
+include .env
+export $(shell sed 's/=.*//' .env)
+
 IMAGE_NAME=$(DOCKER_USER)/aider-sandbox
 TAG=v6
 FULL_IMAGE=docker.io/$(IMAGE_NAME):$(TAG)
