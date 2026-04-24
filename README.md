@@ -98,7 +98,40 @@ aider --model ollama/${MODEL} --yes --no-auto-commits .
   ### stopping sandbox
   - To free up RAM you can stop sandbox with: `killall sbx`
 
+## Aider Flags
+
 ### Disable Analytics
 
 You can opt out of analytics forever by running this command one time:
 `aider --analytics-disable`
+
+### Other flags that could be useful:
+
+group.add_argument(
+"--analytics-disable",
+action="store_true",
+help="Permanently disable analytics",
+default=False,
+)
+
+group.add_argument(
+"--install-main-branch",
+action="store_true",
+help="Install the latest version from the main branch",
+default=False,
+)
+
+Windows?
+group.add_argument(
+"--line-endings",
+choices=["platform", "lf", "crlf"],
+default="platform",
+help="Line endings to use when writing files (default: platform)",
+)
+
+group.add_argument(
+"--env-file",
+metavar="ENV_FILE",
+default=default_env_file(git_root),
+help="Specify the .env file to load (default: .env in git root)",
+).complete = shtab.FILE
