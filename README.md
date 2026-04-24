@@ -20,7 +20,7 @@ Runs a fully sand-boxed A.I. agent using Aider and Ollama model using Docker San
   - `brew serve ollama`
   - Leave that terminal window open. (If you close it, the server stops). Open a NEW terminal tab or window (Cmd + T) and pull in the model
     - `ollama pull qwen2.5-coder:14b`
-  NOTE: if model changes remember to update the dockerfile env var: `ENV MODEL="qwen3.6:35b"` and increment the tag version in the Makefile for the image.
+      NOTE: if model changes remember to update the dockerfile env var: `ENV MODEL="qwen3.6:35b"` and increment the tag version in the Makefile for the image.
 
 ## Running the environment
 
@@ -96,5 +96,9 @@ aider --model ollama/${MODEL} --yes --no-auto-commits .
   - `/read PROJECT_GOAL.md`
 
   ### stopping sandbox
-
   - To free up RAM you can stop sandbox with: `killall sbx`
+
+### Disable Analytics
+
+You can opt out of analytics forever by running this command one time:
+`aider --analytics-disable`
