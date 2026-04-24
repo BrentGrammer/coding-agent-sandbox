@@ -3,15 +3,32 @@
 set -e
 
 export OLLAMA_API_BASE="http://host.docker.internal:11434"
-# export MODEL="qwen2.5-coder:14b"
+
+if [ -f .env ]; then
+  # automatically export all variables like api key
+  set -a
+  source .env
+  set -a
+  echo "✅ Loaded environment from .env"
+else
+  echo "❌ Error: .env file not found!"
+  exit 1
+fi
 
 echo "Checking Docker daemon..."
 if ! docker info > /dev/null 2>&1; then
-  echo "❌ Error: Docker is not running."
-  echo "   Please start Docker Desktop and try again."
-  exit 1
+  echo "Docker is not running. Attempting to start Docker Desktop..."
+  echo 'If on Windows, quit this script and run: "C:\Program Files\Docker\Docker\Docker Desktop.exe"' 
+  open -a Docker
+  echo -n "Waiting for Docker to initialize..."
+  until docker info > /dev/null 2>&1; do
+    echo -n "."
+    sleep 2
+  done
+  echo -e "\n✅ Docker started successfully!"
+else
+  echo "✅ Docker is already running."
 fi
-echo "✅ Docker is running."
 
 # Ensure Ollama is running on the host (GPU access)
 echo "Checking Ollama..."
