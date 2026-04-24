@@ -1,0 +1,8 @@
+  # this is a wrong key - maybe it does in config yaml??
+  mcp_servers:
+    gemini-docs:
+      command: npx
+      args:
+        - -y
+        - "@modelcontextprotocol/server-fetch"
+        - "https://gemini-api-docs-mcp.dev"
