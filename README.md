@@ -70,6 +70,8 @@ Make sure your agent's environment variables are set like this so it doesn't try
 
 ## Aider Usage Tips
 
+- [Configuring API Keys](https://aider.chat/docs/config/api-keys.html)
+
 - run `/ls` to see what files are added to its context
 - use `/read PROJECT.md` to make a spec file readonly but in context
 
