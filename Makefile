@@ -39,7 +39,7 @@ agent:
 	./start_agent.sh
 
 down:
-	sbx rm $(PROJECT)
+	sbx rm $(PROJECT) || true
 
 clean:
 	sbx rm $(PROJECT)
