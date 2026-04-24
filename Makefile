@@ -1,6 +1,6 @@
 DOCKER_USER=brentgrammer
 IMAGE_NAME=$(DOCKER_USER)/aider-sandbox
-TAG=usegeminiv10
+TAG=aider-usegemini-v10
 FULL_IMAGE=docker.io/$(IMAGE_NAME):$(TAG)
 
 PROJECT=aider-sandbox
