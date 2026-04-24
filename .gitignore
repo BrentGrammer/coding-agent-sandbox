@@ -128,3 +128,5 @@ cache.db-wal
 .aider.chat.history.md
 .aider.input.history
 .aider*
+
+!.aiderignore
