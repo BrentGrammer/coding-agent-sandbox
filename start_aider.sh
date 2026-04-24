@@ -21,4 +21,4 @@ if [ -z "$MODEL" ]; then
 fi
 
 echo "Starting Aider with model '$MODEL'..."
-aider --model $MODEL --yes --no-auto-commits --analytics-disable --env-file .env
+aider --model $MODEL --yes --no-auto-commits --analytics-disable --env-file .env --assistant-output-color "#00ffff"
