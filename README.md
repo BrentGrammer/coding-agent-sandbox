@@ -55,6 +55,10 @@ aider --model ${MODEL} --yes --no-auto-commits
 
 ## Models
 
+These names worked:
+Deepseek R1: bedrock/converse/us.deepseek.r1-v1:0
+Deepseek 3.2: bedrock/converse/deepseek.v3.2
+
 DeepSeek on Bedrock is remarkably cheap compared to Anthropic or OpenAI. Since you are using a coding agent (Aider), costs are driven by "Context" (reading your files) and "Output" (writing the code).
 Model Tier
 Input (per 1M tokens)
@@ -70,8 +74,7 @@ DeepSeek-Distill (14B/32B)
 
 Small Task (Adding a single function): ~$0.01
 Heavy Coding Session (1 hour of active back-and-forth): ~$0.25 to $0.75
-Full Repo Analysis: If Aider reads 50 large files at once, you might spend $0.50 just on the initial "read." 3. How to Connect Aider to Bedrock
-Aider uses the litellm library under the hood to talk to AWS. Once you have your IAM keys, run these commands in your terminal:
+Full Repo Analysis: If Aider reads 50 large files at once, you might spend $0.50 just on the initial "read." 3. How to Connect Aider to BedrockAider uses the litellm library under the hood to talk to AWS. Once you have your IAM keys, run these commands in your terminal:
 Set your credentials:
 
 ```shell
