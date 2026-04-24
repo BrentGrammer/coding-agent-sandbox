@@ -15,8 +15,6 @@ push: build
 	docker push $(IMAGE_NAME):$(TAG)
 
 up: down
-	-sbx policy allow network localhost:11434
-	-sbx policy allow network host.docker.internal:11434
 	-sbx policy allow network registry.npmjs.org
 	# for AWS bedrock - depends on region
 	-sbx policy allow network bedrock-runtime.us-west-2.amazonaws.com
