@@ -21,4 +21,4 @@ if [ -z "$MODEL" ]; then
 fi
 
 echo "Starting Aider with model '$MODEL'..."
-aider --model "$MODEL" --yes --no-auto-commits
+aider --model "$MODEL" --yes --no-auto-commits --analytics-disable True
