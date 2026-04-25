@@ -14,7 +14,6 @@ Runs a fully sand-boxed A.I. agent using Aider with OpenAI's models
       sbx policy allow network <host>
       sbx policy deny network <host>
       ```
-- Homebrew (macOS)
 
 ## Running the environment
 
