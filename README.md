@@ -1,9 +1,10 @@
 # A.I. Coding Agent setup
 
-Runs a fully sand-boxed A.I. agent using Aider using OpenAI's models
+Runs a fully sand-boxed A.I. agent using Aider with OpenAI's models
 
 ## Pre-requisites
 
+- Docker
 - [Docker Sandbox](https://docs.docker.com/ai/sandboxes/get-started/)
   - Recommended setting for permissions is Locked Down (balanced allows common apis, dependency managers, etc.)
     - Can change later with `sbx configure` if needed (?)
