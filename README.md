@@ -40,7 +40,7 @@ Gemini: gemini/gemini-2.5-pro
 gemini/gemini-3-pro (not working?)
 gemini/gemini-3-pro-preview
 
-aider --model bedrock_mantle/openai.gpt-oss-120b
+Bedrock thinking model: openai.gpt-oss-120b-1:0
 
 ### Quitting Ollama
 
