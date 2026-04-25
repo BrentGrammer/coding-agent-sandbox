@@ -55,6 +55,9 @@ aider --model ${MODEL} --yes --no-auto-commits
 
 ## Models
 
+- https://docs.litellm.ai/docs/providers/bedrock
+- Match the provider with the model ID in bedrock - {provider}/{modelid}
+
 These names worked:
 Deepseek R1: bedrock/converse/us.deepseek.r1-v1:0
 Deepseek 3.2: bedrock/converse/deepseek.v3.2
