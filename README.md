@@ -22,12 +22,8 @@ Runs a fully sand-boxed A.I. agent using Aider with OpenAI's models
 - start aider:
 
 ```shell
+# inside the sandbox after running make agent:
 ./start_aider.sh
-
-# or
-aider --model ${MODEL} --yes --no-auto-commits --analytics-disable
-# to bring in all project initially:
-aider --model ${MODEL} --yes --no-auto-commits --analytics-disable .
 ```
 
 ## Usage notes
