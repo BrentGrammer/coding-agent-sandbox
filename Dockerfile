@@ -1,7 +1,5 @@
-# Start with a version that actually has Python 3.12
 FROM python:3.12-slim
 
-# Install the minimal system tools the sandbox needs
 RUN apt-get update && apt-get install -y \
     sudo git nodejs npm \
     && rm -rf /var/lib/apt/lists/*
@@ -12,13 +10,7 @@ RUN useradd -ms /bin/bash agent && \
     
 # Install Aider globally
 RUN pip install --no-cache-dir aider-chat
-    
-ENV OLLAMA_API_BASE="http://host.docker.internal:11434"
-# This needs to match what you pulled on your host machine
-# ENV MODEL="qwen2.5-coder:14b"
-ENV MODEL="qwen3.6:35b"
 
-# Set the working directory to where your code will be mounted
 WORKDIR /app
 
 COPY ./.aider.model.settings.yml .

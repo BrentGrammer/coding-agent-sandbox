@@ -1,6 +1,6 @@
 # A.I. Coding Agent setup
 
-Runs a fully sand-boxed A.I. agent using Aider and Ollama model using Docker Sandbox
+Runs a fully sand-boxed A.I. agent using Aider using OpenAI's models
 
 ## Pre-requisites
 
@@ -14,28 +14,20 @@ Runs a fully sand-boxed A.I. agent using Aider and Ollama model using Docker San
       sbx policy deny network <host>
       ```
 - Homebrew (macOS)
-- Ollama Model installed locally
-  - `brew install ollama`
-- Install the models (one time installation)
-  - `brew serve ollama`
-  - Leave that terminal window open. (If you close it, the server stops). Open a NEW terminal tab or window (Cmd + T) and pull in the model
-    - `ollama pull qwen2.5-coder:14b`
-      NOTE: if model changes remember to update the dockerfile env var: `ENV MODEL="qwen3.6:35b"` and increment the tag version in the Makefile for the image.
 
 ## Running the environment
 
-- `make up`
+- `make agent`
   - NOTE: if you make changes to the Dockerfile, increment the tag version and push again with `make push`
 - start aider:
 
 ```shell
-aider --model ollama/${MODEL} --yes --no-auto-commits
+./start_aider.sh
+
+# or
+aider --model ${MODEL} --yes --no-auto-commits --analytics-disable
 # to bring in all project initially:
-aider --model ollama/${MODEL} --yes --no-auto-commits .
-
-# or for newer models?
-aider --model ollama_chat/${MODEL} --yes --no-auto-commits .
-
+aider --model ${MODEL} --yes --no-auto-commits --analytics-disable .
 ```
 
 ### Quitting Ollama
