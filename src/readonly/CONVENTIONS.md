@@ -10,8 +10,7 @@ When making changes to this codebase, please adhere to the following rules:
 - When adding new features or transforms, write appropriate tests in the `tests/` directory to cover the new behavior without generating actual `.wav` files (use mocking for I/O).
 
 ## 2. Iterative Development
-- Make small, incremental changes as outlined in the `PROJECT_GOAL.md`.
-- Ensure the pipeline architecture is respected (stateless transformations, separated I/O).
+- Make small, incremental changes as outlined in `PROJECT_GOAL.md`.
 
 ## 3. Comments
 - Comments in the code should be avoided if possible. The code should be self-documenting and expressive so as to make the intent clear without needing a comment.
