@@ -39,14 +39,6 @@ aider --model ${MODEL} --yes --no-auto-commits --analytics-disable .
 
 - The environment uses Docker Sandbox and a map to the workspace project directory for mounting
 
-### Recommended models
-
-After pulling a new model, change the `MODEL=` line in `start-agent.sh` (e.g., `MODEL="qwen3-coder-next"`) and restart.
-
-- qwen2.5-coder:14b -> base for ai coding agent - good balance between resource usage and performance
-- qwen3-coder-next → biggest quality jump for agentic work.
-- devstral (small or main) or glm-5.1 → Compare how they feel in real refactoring tasks.
-
 ### Recommended Locked Down settings
 
 - `docker sandbox network proxy --allow-host localhost`
@@ -54,9 +46,6 @@ After pulling a new model, change the `MODEL=` line in `start-agent.sh` (e.g., `
 - For Node.js: `docker sandbox network proxy --allow-host registry.npmjs.org`
 - If you get a Connection Refused or Network Unreachable error while the agent is working, just run this command on your Mac to fix it:
   `docker sandbox network proxy [sandbox-name] --allow-host [the-domain-it-tried-to-reach]`
-
-Make sure your agent's environment variables are set like this so it doesn't try to look for Ollama in the wrong place:
-`OLLAMA_HOST: http://host.docker.internal:11434`
 
 - In "Locked Down" mode, if your agent tries to use a curl or git clone command to a site you haven't whitelisted, it will fail silently or hang. Keep an eye on your terminal for proxy block notifications!
 
@@ -74,12 +63,6 @@ Make sure your agent's environment variables are set like this so it doesn't try
 
 ```Bash
 /read-only path/to/file.py
-```
-
-- You can also launch Aider and tell it to include everything in the workspace folder immediately from your terminal:
-
-```Bash
-aider --model ollama/${MODEL} --yes --no-auto-commits .
 ```
 
 - see chat mode options you can use: https://aider.chat/docs/usage/modes.html
