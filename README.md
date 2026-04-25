@@ -17,7 +17,7 @@ Runs a fully sand-boxed A.I. agent using Aider with OpenAI's models
 
 ## Running the environment
 
-- cd into the project root and run `make agent`
+- make sure you are in the project root and run `make agent`
   - NOTE: if you make changes to the Dockerfile, increment the tag version and push again with `make push`
 - start aider:
 
