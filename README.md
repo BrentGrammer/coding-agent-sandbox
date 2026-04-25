@@ -30,6 +30,16 @@ aider --model ${MODEL} --yes --no-auto-commits
 aider --model ${MODEL} --yes --no-auto-commits .
 ```
 
+## models
+
+- see https://models.litellm.ai/
+
+Deepseek R1: bedrock/converse/us.deepseek.r1-v1:0
+Deepseek 3.2: bedrock/converse/deepseek.v3.2
+Gemini: gemini/gemini-2.5-pro
+gemini/gemini-3-pro (not working?)
+gemini/gemini-3-pro-preview
+
 ### Quitting Ollama
 
 - In the running terminal, press CTRL-C
