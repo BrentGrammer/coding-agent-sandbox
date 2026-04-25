@@ -30,11 +30,6 @@ aider --model ${MODEL} --yes --no-auto-commits --analytics-disable
 aider --model ${MODEL} --yes --no-auto-commits --analytics-disable .
 ```
 
-### Quitting Ollama
-
-- In the running terminal, press CTRL-C
-- Run `pkill ollama`
-
 ## Usage notes
 
 - The environment uses Docker Sandbox and a map to the workspace project directory for mounting
