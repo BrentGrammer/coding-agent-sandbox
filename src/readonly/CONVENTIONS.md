@@ -79,6 +79,7 @@ def test_mix_with_normalization(self):
 - The code should be Easy To Change, debuggable and maintainable.
 - Code should have a low cyclomatic complexity. Do not write code that is more than 3 levels deep in nesting conditionals or similar constructs.
 - Avoid introducing common and well-known code smells.
+- Functions should not have more than 4 parameters. A long list of parameters is a code smell and indicates the function is trying to do too much.
 
 ## 7. Architecture and Design Principles
 
