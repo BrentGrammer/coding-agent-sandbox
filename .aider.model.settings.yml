@@ -17,4 +17,5 @@
   use_repo_map: true
   use_temperature: false
 
+
 # see https://aider.chat/docs/config/adv-model-settings.html
