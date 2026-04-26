@@ -128,3 +128,4 @@ cache.db-wal
 .aider*
 
 !.aiderignore
+!.aider.conf.yml

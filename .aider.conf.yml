@@ -1,0 +1,4 @@
+read:
+  - src/readonly/CONVENTIONS.md
+  - src/readonly/PYTHON_INSTRUCTIONS.md
+  - src/readonly/AGENT.md
