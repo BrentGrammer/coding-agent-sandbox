@@ -59,7 +59,18 @@ After pulling a new model, change the `MODEL=` line in `start-agent.sh` (e.g., `
 
 - qwen2.5-coder:14b -> base for ai coding agent - good balance between resource usage and performance
 - qwen3-coder-next → biggest quality jump for agentic work.
-- devstral (small or main) or glm-5.1 → Compare how they feel in real refactoring tasks.
+
+```shell
+# In start_aider.sh:
+
+# MODEL="ollama/qwen2.5-coder:14b"
+MODEL="ollama/qwen3.6:35b"
+#MODEL="ollama/deepseek-r1:32b" # good for thinking and reasoning with complex .md instructions with design patterns etc.
+#MODEL="ollama/qwen2.5-coder:32b" # good for fast boilerplate and refactors
+# MODEL="gemini/gemini-3-pro-preview"
+# MODEL="gemini/gemini-2.5-pro"
+#MODEL="openai/gpt-5.4"
+```
 
 ### Recommended Locked Down settings
 
