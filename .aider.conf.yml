@@ -2,3 +2,6 @@ read:
   - src/readonly/CONVENTIONS.md
   - src/readonly/PYTHON_INSTRUCTIONS.md
   - src/readonly/AGENT.md
+cache-prompts: true
+# map-tokens: 1024
+map-multiplier-no-files: 1
