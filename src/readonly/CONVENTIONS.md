@@ -73,13 +73,15 @@ def test_mix_with_normalization(self):
 ## 6. Code Cleanliness
 
 - Follow good software design principles such as those espoused by Martin Fowler, Kent Beck and Bob Martin.
-- Code should be easy to read and understand.
+- Code should be easy to read and understand. It should not surprise you if you step through the code. The code should be so sensible that it is boring.
 - Code should be separated in to modules that separate concerns to prevent too much coupling.
 - Consider Domain Driven Design principles such has maintaining a business domain language that is consistent and maps to real-world objects relevant to the context.
 - The code should be Easy To Change, debuggable and maintainable.
-- When generating or refactoring code, you must adhere to the following architectural standards:
+- Code should have a low cyclomatic complexity. Do not write code that is more than 3 levels deep in nesting conditionals or similar constructs.
 
 ## 7. Architecture and Design Principles
+
+- When generating or refactoring code, you must adhere to the following architectural standards:
 
 1. **Design Pattern First-Thinking:** Before writing complex logic, evaluate if a Gang of Four (GoF) design pattern is applicable to ensure maintainability and scalability.
    - Use **Creational** patterns (e.g., Factory, Singleton, Builder) to manage object creation complexity.
@@ -96,8 +98,8 @@ def test_mix_with_normalization(self):
 3. **Refactoring Trigger:** If you find yourself writing deep `switch` statements or multiple `if/else` blocks based on object type or state, stop and refactor using the **Strategy** or **State** pattern instead.
 
 4. **Functional Programming** Consider Functional Programming concepts if they would work well for the use case.
-    - Functions should be pure and have no side effects.
-    - Functions should be composable. 
+   - Functions should be pure and have no side effects.
+   - Functions should be composable.
 
 ## 8. Structure and Organization
 
