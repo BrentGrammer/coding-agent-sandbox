@@ -78,6 +78,7 @@ def test_mix_with_normalization(self):
 - Consider Domain Driven Design principles such has maintaining a business domain language that is consistent and maps to real-world objects relevant to the context.
 - The code should be Easy To Change, debuggable and maintainable.
 - Code should have a low cyclomatic complexity. Do not write code that is more than 3 levels deep in nesting conditionals or similar constructs.
+- Avoid introducing common and well-known code smells.
 
 ## 7. Architecture and Design Principles
 
@@ -113,3 +114,4 @@ def test_mix_with_normalization(self):
 - Avoid redundant typing like typing a variable that is assigned to an already typed argument passed in.
 - Always type annotate arguments and return types for functions.
 - Prefer not using Any as a type annotation. If you must use Any, then explain why in a comment.
+- Avoid manual type casting if possible. This indicates a possible code smell. If you need to type cast, then write a comment explaining why.
