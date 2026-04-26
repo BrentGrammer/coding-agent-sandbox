@@ -1,15 +1,20 @@
+- name: gemini/gemini-3-pro-preview
+  edit_format: diff
+  use_repo_map: true
+  reasoning_tag: think
+  use_temperature: false
 - name: ollama/qwen3.6:35b
   edit_format: diff
   use_repo_map: true
   reasoning_tag: think
+  use_temperature: false
   extra_params:
     num_ctx: 32768
-    temperature: 0.0
-    # THIS IS THE SWITCH:
+    # not sure if this works
     preserve_thinking: true
+- name: ollama/qwen2.5-coder:7b
+  edit_format: diff
+  use_repo_map: true
+  use_temperature: false
 
-# aider --model ollama/qwen3.6:35b --yes --no-auto-commits .
-# this settings file does not seem to work.
-
-
-# aider --model ollama/qwen3.6:35b --model-settings-file aider.model.settings.yml --yes --no-auto-commits .
+# see https://aider.chat/docs/config/adv-model-settings.html
