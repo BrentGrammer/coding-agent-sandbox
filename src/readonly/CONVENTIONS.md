@@ -1,6 +1,6 @@
 # AI Developer Conventions & Workflow
 
-When making changes to this codebase, please adhere to the following rules:
+When making changes to this codebase, please adhere to the following rules and conventions:
 
 ## 1. Testing Requirement
 
