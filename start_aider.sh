@@ -5,6 +5,8 @@
 
 set -e
 
+MODEL="bedrock/converse/deepseek.v3.2"
+
 if [ -f .env ]; then
   set -a
   source .env
