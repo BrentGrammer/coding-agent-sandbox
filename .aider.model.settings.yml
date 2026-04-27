@@ -1,0 +1,28 @@
+- name: bedrock/us.anthropic.claude-opus-4-7
+  edit_format: whole
+  use_repo_map: true
+  use_temperature: false
+  streaming: false
+  extra_params:
+    max_tokens: 128000 # set this to help with token limit on bedrock models
+- name: bedrock/global.anthropic.claude-opus-4-7
+  edit_format: whole
+  use_repo_map: true
+  use_temperature: false
+  streaming: false
+  extra_params:
+    max_tokens: 128000
+- name: bedrock/converse/us.deepseek.r1-v1:0
+  edit_format: whole
+  use_repo_map: true
+  use_temperature: false
+  streaming: false
+  extra_params:
+    max_tokens: 128000
+- name: bedrock/converse/deepseek.v3.2
+  edit_format: whole
+  use_repo_map: true
+  use_temperature: false
+  streaming: false
+  extra_params:
+    max_tokens: 128000
