@@ -85,21 +85,23 @@ def test_mix_with_normalization(self):
 
 - When generating or refactoring code, you must adhere to the following architectural standards:
 
-1. **Design Pattern First-Thinking:** Before writing complex logic, evaluate if a Gang of Four (GoF) design pattern is applicable to ensure maintainability and scalability.
+1. Prefer Composition over Inheritance. Code components should be composable.
+
+2. **Design Pattern First-Thinking:** Before writing complex logic, evaluate if a Gang of Four (GoF) design pattern is applicable to ensure maintainability and scalability.
    - Use **Creational** patterns (e.g., Factory, Singleton, Builder) to manage object creation complexity.
    - Use **Structural** patterns (e.g., Adapter, Decorator, Facade) to handle relationships between entities and simplify interfaces.
    - Use **Behavioral** patterns (e.g., Strategy, Observer, Command, State) to eliminate heavy nested conditionals and decouple logic.
 
-2. **SOLID Principles:**
+3. **SOLID Principles:**
    - **Single Responsibility:** Classes should have one reason to change.
    - **Open/Closed:** Code should be open for extension but closed for modification.
    - **Liskov Substitution:** Subtypes must be substitutable for their base types.
    - **Interface Segregation:** Prefer many small, specific interfaces over one large one.
    - **Dependency Inversion:** Depend on abstractions, not concretions.
 
-3. **Refactoring Trigger:** If you find yourself writing deep `switch` statements or multiple `if/else` blocks based on object type or state, stop and refactor using the **Strategy** or **State** pattern instead.
+4. **Refactoring Trigger:** If you find yourself writing deep `switch` statements or multiple `if/else` blocks based on object type or state, stop and refactor using the **Strategy** or **State** pattern instead.
 
-4. **Functional Programming** Consider Functional Programming concepts if they would work well for the use case.
+5. **Functional Programming** Consider Functional Programming concepts if they would work well for the use case.
    - Functions should be pure and have no side effects.
    - Functions should be composable.
 
