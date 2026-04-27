@@ -21,6 +21,7 @@ When making changes to this codebase, please adhere to the following rules and c
 - Comments in the code should be avoided if possible. The code should be self-documenting and expressive so as to make the intent clear without needing a comment.
 - In cases where the code might need explanation, then comments can be used, but they must explain the WHY and not the WHAT.
 - Comments that only explain what the code is doing are redundant and not helpful unless what the code is doing is not intuitive.
+- Documentation for functions is okay as long as the function is complicated enough to warrant it. Formats like Doc strings, JSDoc documentation is acceptable in these cases. Do not add documention for simple functions.
 
 ### Example of bad comments:
 
