@@ -3,6 +3,8 @@
 #### Helper script to start OpenAI Codex in docker sandbox. You need to set your OpenAI key with sbx secret set -g openai
   ## or sbx secret set -g --oauth and sign in with your account if you have a subscription.
 
+#### cd into your project folder before running this. It will use that folder as what it has access to.
+
 echo "Checking Docker daemon..."
 if ! docker info > /dev/null 2>&1; then
   echo "Docker is not running. Attempting to start Docker Desktop..."
