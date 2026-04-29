@@ -21,7 +21,7 @@ When making changes to this codebase, please adhere to the following rules and c
 - Comments in the code should be avoided if possible. The code should be self-documenting and expressive so as to make the intent clear without needing a comment.
 - In cases where the code might need explanation, then comments can be used, but they must explain the WHY and not the WHAT.
 - Comments that only explain what the code is doing are redundant and not helpful unless what the code is doing is not intuitive.
-- Documentation for functions is okay as long as the function is complicated enough to warrant it. Formats like Doc strings, JSDoc documentation is acceptable in these cases. Do not add documention for simple functions.
+- Commented documentation for functions is okay as long as the function is complicated enough to warrant it. Formats like Doc strings, JSDoc documentation is acceptable in these cases. Do not add documention for simple functions.
 
 ### Example of bad comments:
 
@@ -74,13 +74,19 @@ def test_mix_with_normalization(self):
 ## 6. Code Cleanliness
 
 - Follow good software design principles such as those espoused by Martin Fowler, Kent Beck and Bob Martin.
+- Code should be DRY (Do Not Repeat Yourself) where possible and practical. If you need to repeat the same behavior in code more than two or three times, then it should be abstracted into a shared module or function.
 - Code should be easy to read and understand. It should not surprise you if you step through the code. The code should be so sensible that it is boring.
 - Code should be separated in to modules that separate concerns to prevent too much coupling.
 - Consider Domain Driven Design principles such has maintaining a business domain language that is consistent and maps to real-world objects relevant to the context.
 - The code should be Easy To Change, debuggable and maintainable.
-- Code should have a low cyclomatic complexity. Do not write code that is more than 3 levels deep in nesting conditionals or similar constructs.
 - Avoid introducing common and well-known code smells.
+
+#### 6a. Functions
+
 - Functions should not have more than 4 parameters. A long list of parameters is a code smell and indicates the function is trying to do too much.
+- Functions should have a low cyclomatic complexity. Do not write code that is more than 3 levels deep in nesting conditionals or similar constructs.
+- Function names should be descriptive and clearly indicate what the function is doing. Prefer following the convention: "<verb>\_<subject>", ex: use `find_edge_nodes()` instead of `edge_nodes()`
+- Helper functions are fine, but do not create helper functions if they are not able to be reused throughout the program.
 
 ## 7. Architecture and Design Principles
 
