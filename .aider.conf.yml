@@ -5,3 +5,5 @@ read:
 cache-prompts: true
 # map-tokens: 1024
 map-multiplier-no-files: 1
+set-env:
+  - OLLAMA_NUM_CTX=65536
