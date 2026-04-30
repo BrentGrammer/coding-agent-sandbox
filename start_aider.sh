@@ -6,7 +6,7 @@
 set -e
 
 #MODEL=bedrock/converse/zai.glm-5 # glm-5.1 - this one is fast!! but don't add extra config to aider.model.settings.yml for it - that slows it down.
-# MODEL=bedrock/moonshotai.kimi-k2.5 # or moonshot.kimi-k2-thinking
+# MODEL=bedrock/converse/moonshotai.kimi-k2.5 # or moonshot.kimi-k2-thinking
 #MODEL=bedrock/converse/minimax.minimax-m2.5
 
 #MODEL="bedrock/global.anthropic.claude-opus-4-7" # use inference profile
