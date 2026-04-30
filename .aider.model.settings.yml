@@ -16,6 +16,56 @@
   edit_format: diff
   use_repo_map: true
   use_temperature: false
-
+- name: gemini/gemini-2.5-pro
+  edit_format: diff
+  use_repo_map: true
+  use_temperature: false
+- name: ollama/qwen3.6:35b
+  edit_format: diff
+  use_repo_map: true
+  reasoning_tag: think
+  use_temperature: false
+  extra_params:
+    num_ctx: 32768
+    # not sure if this works
+    preserve_thinking: true
+- name: ollama/qwen2.5-coder:7b
+  edit_format: diff
+  use_repo_map: true
+  use_temperature: false
+- name: ollama/qwen2.5-coder:14b
+  edit_format: diff
+  use_repo_map: true
+  use_temperature: false
+- name: ollama/qwen3.6:35b-a3b-coding-nvfp4
+  edit_format: diff 
+  use_repo_map: true
+  use_temperature: false
+- name: bedrock/us.anthropic.claude-opus-4-7
+  edit_format: whole
+  use_repo_map: true
+  use_temperature: false
+  streaming: false
+  extra_params:
+    max_tokens: 128000
+- name: bedrock/global.anthropic.claude-opus-4-7
+  edit_format: whole
+  use_repo_map: true
+  use_temperature: false
+  streaming: false
+  extra_params:
+    max_tokens: 128000
+- name: bedrock/converse/zai.glm-5
+  # edit_format: whole
+  use_repo_map: true
+  # use_temperature: false
+  # streaming: false
+  # extra_params:
+  #   max_tokens: 128000
+- name: bedrock/converse/minimax.minimax-m2.5
+  edit_format: diff
+  use_repo_map: true
+  extra_params:
+    max_tokens: 128000
 
 # see https://aider.chat/docs/config/adv-model-settings.html
