@@ -30,6 +30,7 @@ There is an empty `src/` folder where project files and source code can live. It
 - **IMPORTANT** Docker sandbox is proxy managed, so the host needs to contain the secrets, otherwise you may get authentication errors including "invalid API key":
   - on the host machine, set sbx secret containing your open ai api key with: `sbx secret set -g <llm-company-name>`
   - example: `sbx secret set -g openai` and enter your API key at the prompt. This will ensure requests sent from within the sandbox will work with your api keys in the headers. Docker sandbox is designed to use secrets stored in the host's secure keychain.
+  - To use OpenAI Plus subscription for example, use: `sbx secret set -g openai --oauth`
 - `make agent`
   - NOTE: if you make changes to the Dockerfile, increment the tag version
 - start aider:
