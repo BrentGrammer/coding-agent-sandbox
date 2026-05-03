@@ -23,3 +23,5 @@ sbx policy allow network accounts.google.com
 sbx policy allow network play.googleapis.com
 
 sbx run gemini .
+
+# choose API key (oauth does not seem to work in sandbox in locked down mode)
