@@ -31,6 +31,9 @@
 #
 # 3. Start a generic shell sandbox in your project:
 #    sbx run shell .
+# optionally update and upgrade 
+#    sudo apt update
+#    sudo apt upgrade -y
 #
 # 4. Inside the sandbox, install Gemini CLI:
 #    npm install -g @google/gemini-cli
@@ -40,6 +43,20 @@
 #
 # 6. Choose:
 #    "Sign in with Google"
+#
+################################################ 
+#
+# REUSING EXISTING SANDBOX (after setting it up initially using above instructions)
+#
+# 1. List existing sandboxes:
+#    sbx ls
+#
+# 2. Reconnect to the existing sandbox:
+#    sbx run <sandbox-name>
+#
+# Notes:
+# - Gemini CLI install persists inside the sandbox.
+# - OAuth login/session should persist inside the sandbox.
 #
 ###############################################################################
 
