@@ -30,7 +30,7 @@
 #    sbx policy allow network cloudcode-pa.googleapis.com
 #
 # 3. CD into the project root folder and start a generic shell sandbox in your project:
-#    sbx run shell .
+#    sbx run shell . --name <sandbox-name>
 # optionally update and upgrade 
 #    sudo apt update
 #    sudo apt upgrade -y
