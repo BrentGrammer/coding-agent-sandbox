@@ -29,7 +29,7 @@
 #    sbx policy allow network play.googleapis.com
 #    sbx policy allow network cloudcode-pa.googleapis.com
 #
-# 3. Start a generic shell sandbox in your project:
+# 3. CD into the project root folder and start a generic shell sandbox in your project:
 #    sbx run shell .
 # optionally update and upgrade 
 #    sudo apt update
