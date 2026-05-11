@@ -3,6 +3,7 @@
 Runs a fully sand-boxed A.I. agent using Aider and Ollama model for local A.I. model hosting using Docker Sandbox.
 There is an empty `src/` folder where project files and source code can live. It also contains a readonly directory with .md files the agent can parse and bring into context using `/read` in aider.
 
+- There are also some base helper scripts (start_codex.sh or start_gemini.sh) to setup a Docker Sandbox with Codex or Gemini CLI to try out other agents and options.
 - Visit the other branches of this project to see implementations using Cloud based models like Gemini and OpenAI
 
 ## Pre-requisites

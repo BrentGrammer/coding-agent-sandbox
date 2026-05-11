@@ -60,6 +60,8 @@
 #
 ###############################################################################
 
+SANDBOX_NAME="gemini-$(basename "$PWD")"
+
 echo "Checking Docker daemon..."
 if ! docker info > /dev/null 2>&1; then
   echo "Docker is not running. Attempting to start Docker Desktop..."
@@ -92,4 +94,4 @@ sbx policy allow network cloudcode-pa.googleapis.com
 # This only works with an API key, not with a subscription or oauth signin
 # sbx run gemini .
 
-sbx run shell .
+sbx run shell . --name "$SANDBOX_NAME"
