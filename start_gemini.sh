@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 ###############################################################################
 # Gemini CLI OAuth Setup inside Docker SBX Locked-Down Sandbox
 #
@@ -16,7 +14,7 @@
 #   because that refers to Gemini's internal sandbox,
 #   not Docker SBX.
 #
-# Steps:
+# First-Time Setup:
 #
 # 1. Remove Google API-key secret so Gemini uses OAuth:
 #    sbx secret rm -g google
@@ -62,25 +60,28 @@
 
 SANDBOX_NAME="gemini-$(basename "$PWD")"
 
+echo "Using sandbox name: $SANDBOX_NAME"
+
 echo "Checking Docker daemon..."
 if ! docker info > /dev/null 2>&1; then
   echo "Docker is not running. Attempting to start Docker Desktop..."
   echo 'If on Windows, quit this script and run: "C:\Program Files\Docker\Docker\Docker Desktop.exe"' 
   open -a Docker
-  echo -n "Waiting for Docker to initialize..."
+
+  echo -n "Waiting for Docker to initialize"
   until docker info > /dev/null 2>&1; do
     echo -n "."
     sleep 2
   done
+
   echo -e "\n✅ Docker started successfully!"
 else
   echo "✅ Docker is already running."
 fi
 
-
 code .
 
-
+# Required policies for Gemini OAuth + Gemini CLI
 sbx policy allow network gemini-api-docs-mcp.dev
 sbx policy allow network ai.google.dev
 sbx policy allow network registry.npmjs.org
@@ -88,10 +89,15 @@ sbx policy allow network generativelanguage.googleapis.com
 sbx policy allow network oauth2.googleapis.com
 sbx policy allow network accounts.google.com
 sbx policy allow network play.googleapis.com
-# need this one to login with oauth in a locked down docker sandbox
 sbx policy allow network cloudcode-pa.googleapis.com
 
-# This only works with an API key, not with a subscription or oauth signin
-# sbx run gemini .
-
-sbx run shell . --name "$SANDBOX_NAME"
+# Reuse existing sandbox if it already exists
+if sbx ls | grep -q "$SANDBOX_NAME"; then
+  echo "✅ Existing sandbox found: $SANDBOX_NAME"
+  echo "Reconnecting..."
+  echo "REMINDER: Once inside the sandbox, run the command 'gemini' to start the cli."
+  sbx run "$SANDBOX_NAME"
+else
+  echo "🆕 Creating new sandbox: $SANDBOX_NAME"
+  sbx run shell . --name "$SANDBOX_NAME"
+fi
