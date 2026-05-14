@@ -95,9 +95,11 @@ sbx policy allow network cloudcode-pa.googleapis.com
 if sbx ls | grep -q "$SANDBOX_NAME"; then
   echo "✅ Existing sandbox found: $SANDBOX_NAME"
   echo "Reconnecting..."
-  echo "REMINDER: Once inside the sandbox, run the command 'gemini' to start the cli."
+  echo "REMINDER: Once inside the sandbox, run the command 'GEMINI_TELEMETRY_ENABLED=false GEMINI_TELEMETRY_LOG_PROMPTS=false GEMINI_TELEMETRY_TRACES_ENABLED=false GEMINI_TELEMETRY_TARGET=local gemini' to start the cli."
   sbx run "$SANDBOX_NAME"
 else
   echo "🆕 Creating new sandbox: $SANDBOX_NAME"
   sbx run shell . --name "$SANDBOX_NAME"
 fi
+# Disable telemetry
+# GEMINI_TELEMETRY_ENABLED=false GEMINI_TELEMETRY_LOG_PROMPTS=false GEMINI_TELEMETRY_TRACES_ENABLED=false GEMINI_TELEMETRY_TARGET=local gemini [your-command]
