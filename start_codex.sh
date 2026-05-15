@@ -25,4 +25,4 @@ fi
 # you need this if in locked down mode in docker sandbox
 sbx policy allow network "chatgpt.com"
 
-sbx run codex -- --sandbox workspace-write --cd .
+sbx run codex -- --sandbox workspace-write --cd . -c analytics.enabled=false
