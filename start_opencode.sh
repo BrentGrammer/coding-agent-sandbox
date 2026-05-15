@@ -53,6 +53,7 @@ if sbx ls | grep "$SANDBOX_NAME"; then
   sbx run "$SANDBOX_NAME" -- --model "$MODEL"
 else
   echo "🆕 Creating new sandbox: $SANDBOX_NAME"
+  echo "!!! IMPORTANT !!! --- Remember to set your API key with 'sbx secret set ${SANDBOX_NAME} openai' ---"
 
   sbx create opencode "$PROJECT_DIR" --name "$SANDBOX_NAME"
 
