@@ -16,11 +16,11 @@ SANDBOX_NAME="opencode-${PROJECT_BASENAME//_/-}"
 # Example sandbox name:
 #   my_project -> opencode-my-project
 
-echo "Starting opencode agent for project $PROJECT_BASENAME with model: $MODEL..."
-
-# Persist OpenCode/Docker telemetry-related env vars inside this sandbox.
-# This is idempotent: it replaces any previous block managed by this script.
-sbx exec -d "$SANDBOX_NAME" bash -c '
+configure_privacy_flags() {
+  echo "Configuring privacy/telemetry environment inside sandbox..."
+  # Persist OpenCode/Docker telemetry-related env vars inside this sandbox.
+  # This is idempotent: it replaces any previous block managed by this script.
+  sbx exec -d "$SANDBOX_NAME" bash -c '
 set -euo pipefail
 
 touch /etc/sandbox-persistent.sh
@@ -37,7 +37,26 @@ export SBX_NO_TELEMETRY=1
 # END opencode privacy flags
 EOF
 ' || true
+}
 
-sbx run opencode "$PROJECT_DIR" \
-  --name "$SANDBOX_NAME" \
-  -- --model "$MODEL"
+echo "Starting opencode agent for project $PROJECT_BASENAME with model: $MODEL..."
+echo "Sandbox name: $SANDBOX_NAME"
+echo "Project dir: $PROJECT_DIR"
+
+# Reuse existing sandbox if it already exists
+if sbx ls | grep "$SANDBOX_NAME"; then
+  echo "✅ Existing sandbox found: $SANDBOX_NAME"
+  echo "Reconnecting..."
+
+  configure_privacy_flags
+
+  sbx run "$SANDBOX_NAME" -- --model "$MODEL"
+else
+  echo "🆕 Creating new sandbox: $SANDBOX_NAME"
+
+  sbx create opencode "$PROJECT_DIR" --name "$SANDBOX_NAME"
+
+  configure_privacy_flags
+
+  sbx run "$SANDBOX_NAME" -- --model "$MODEL"
+fi
