@@ -1,5 +1,7 @@
 # A.I. Coding Agent setup
 
+- See [MODELS.md](./MODELS.md) for reference and list of models to use and try.
+
 Runs a fully sand-boxed A.I. agent using Aider and Ollama model for local A.I. model hosting using Docker Sandbox.
 There is an empty `src/` folder where project files and source code can live. It also contains a readonly directory with .md files the agent can parse and bring into context using `/read` in aider.
 
