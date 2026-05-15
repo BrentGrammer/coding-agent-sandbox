@@ -42,6 +42,7 @@ EOF
 echo "Starting opencode agent for project $PROJECT_BASENAME with model: $MODEL..."
 echo "Sandbox name: $SANDBOX_NAME"
 echo "Project dir: $PROJECT_DIR"
+echo "!!! IMPORTANT !!! --- Remember to set your API key with 'sbx secret set ${SANDBOX_NAME} openai' ---"
 
 # Reuse existing sandbox if it already exists
 if sbx ls | grep "$SANDBOX_NAME"; then
@@ -53,7 +54,6 @@ if sbx ls | grep "$SANDBOX_NAME"; then
   sbx run "$SANDBOX_NAME" -- --model "$MODEL"
 else
   echo "🆕 Creating new sandbox: $SANDBOX_NAME"
-  echo "!!! IMPORTANT !!! --- Remember to set your API key with 'sbx secret set ${SANDBOX_NAME} openai' ---"
 
   sbx create opencode "$PROJECT_DIR" --name "$SANDBOX_NAME"
 
