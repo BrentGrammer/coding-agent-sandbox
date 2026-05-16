@@ -173,6 +173,8 @@ See [Setup for different CLIs](https://github.com/exa-labs/exa-mcp-server)
 
 https://github.com/oraios/serena
 
+Serena handles mapping a large codebase efficiently to save context window bloat and manage large-scale refactoring.
+
 - Gemini CLI: Update .gemini/settings.json to add it and pull from git with uv
 
   ```json
