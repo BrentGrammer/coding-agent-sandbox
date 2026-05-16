@@ -2,6 +2,10 @@
 
 # Policies to allow in docker sandbox when in locked down mode
 
+# if blocked or package fails:
+# run `sbx policy log`
+# Then add only the blocked host that actually appears.
+
 set -euo pipefail
 
 # For hosting Ollama models locally:
