@@ -158,3 +158,13 @@ metavar="ENV_FILE",
 default=default_env_file(git_root),
 help="Specify the .env file to load (default: .env in git root)",
 ).complete = shtab.FILE
+
+## MCP Tooling
+
+### Exa (web search MCP)
+
+See [Setup for different CLIs](https://github.com/exa-labs/exa-mcp-server)
+
+- For codex: `codex mcp add exa --url https://mcp.exa.ai/mcp`
+- Gemini, exists in `.gemini/settings.json`
+- Opencode lists it in `opencode.json` config

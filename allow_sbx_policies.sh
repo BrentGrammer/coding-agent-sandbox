@@ -44,3 +44,6 @@ sbx policy allow network play.googleapis.com:443
 # Allow OpenAI for codex Pro subscription
 sbx policy allow network chatgpt.com:443
 sbx policy allow network api.openai.com:443
+
+# For Exa mcp
+sbx policy allow network mcp.exa.ai:443
