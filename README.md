@@ -209,3 +209,17 @@ https://github.com/oraios/serena
     }
   }
   ```
+
+  - Set the context ('ide' is for generic coding agent):
+
+  ```
+  desktop-app: Tailored for use with desktop applications like Claude Desktop. This is the default. The full set of Serena’s tools is provided, as the application is assumed to have no prior coding-specific capabilities.
+
+  claude-code: Optimized for use with Claude Code, it disables tools that would duplicate Claude Code’s built-in capabilities.
+
+  codex: Optimized for use with OpenAI Codex.
+
+  ide: Generic context for IDE assistants/coding agents, e.g. VSCode, Cursor, or Cline, focusing on augmenting existing capabilities. Basic file operations and shell execution are assumed to be handled by the assistant’s own capabilities.
+
+  agent: Designed for scenarios where Serena acts as a more autonomous agent, for example, when used with Agno.
+  ```
