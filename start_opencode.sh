@@ -26,8 +26,8 @@ SANDBOX_NAME="opencode-${PROJECT_BASENAME//_/-}"
 #   my_project -> opencode-my-project
 
 # Required for using bedrock
-sbx policy allow network "bedrock-runtime.us-west-2.amazonaws.com"
-sbx policy allow network "bedrock-runtime.us-east-1.amazonaws.com"
+sbx policy allow network bedrock-runtime.us-west-2.amazonaws.com:443
+sbx policy allow network bedrock-runtime.us-east-1.amazonaws.com:443
 
 configure_privacy_flags() {
   echo "Configuring privacy/telemetry environment inside sandbox..."
