@@ -1,0 +1,25 @@
+{
+  "customModels": [
+    {
+      "modelDisplayName": "OpenAI GPT-5.5",
+      "model": "gpt-5.5",
+      "provider": "openai",
+      "apiKey": "${OPENAI_API_KEY}"
+    },
+    {
+      "modelDisplayName": "Gemini 3 Pro",
+      "model": "gemini-3.1-pro",
+      "provider": "google",
+      "apiKey": "${GEMINI_API_KEY}"
+    },
+    {
+      "modelDisplayName": "AWS Bedrock (US)",
+      "model": "anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "provider": "aws-bedrock",
+      "apiKey": "${AWS_ACCESS_KEY_ID}:${AWS_SECRET_ACCESS_KEY}",
+      "extraArgs": {
+        "region": "us-east-1"
+      }
+    }
+  ]
+}
