@@ -174,3 +174,38 @@ See [Setup for different CLIs](https://github.com/exa-labs/exa-mcp-server)
 https://github.com/oraios/serena
 
 - Gemini CLI: Update .gemini/settings.json to add it and pull from git with uv
+  - alternatively, you could install it with uv on the sandbox, then close the git connection policies and run it directly:
+
+  ```shell
+  # Install Serena locally from git
+  cd ~
+  git clone https://github.com/oraios/serena.git
+  cd serena
+  uv run serena --help
+
+  # Afterwords remove git allow policy from sbx:
+  sbx policy rm <gitpolicies>
+  ```
+
+  ```json
+  {
+    "mcpServers": {
+      "serena": {
+        "command": "uv",
+        "args": [
+          "run",
+          "--directory",
+          "/home/sandbox/serena",
+          "serena",
+          "start-mcp-server",
+          "--context",
+          "ide",
+          "--project",
+          "."
+        ],
+        "trust": true,
+        "timeout": 120000
+      }
+    }
+  }
+  ```
