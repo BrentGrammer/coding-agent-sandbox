@@ -168,3 +168,9 @@ See [Setup for different CLIs](https://github.com/exa-labs/exa-mcp-server)
 - For codex: `codex mcp add exa --url https://mcp.exa.ai/mcp`
 - Gemini, exists in `.gemini/settings.json`
 - Opencode lists it in `opencode.json` config
+
+### Serena (efficient code search)
+
+https://github.com/oraios/serena
+
+- Gemini CLI: Update .gemini/settings.json to add it and pull from git with uv

@@ -47,3 +47,7 @@ sbx policy allow network api.openai.com:443
 
 # For Exa mcp
 sbx policy allow network mcp.exa.ai:443
+
+# Needed for Serena mcp
+sbx policy allow network github.com:443
+sbx policy allow network api.github.com:443

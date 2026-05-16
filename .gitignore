@@ -264,3 +264,6 @@ cache.db-wal
 
 .DS_Store
 
+# Serena mcp
+.serena/
+
