@@ -19,6 +19,7 @@ There is an empty `src/` folder where project files and source code can live. It
       sbx policy allow network <host>
       sbx policy deny network <host>
       ```
+      - remove policies with `sbx policy rm network --id c4164c09-b43e-429e-a528-ceb034d63028` (don't include the local: or prepended string with the id)
 - Homebrew (macOS)
 - Ollama Model installed locally
   - `brew install ollama`
@@ -174,7 +175,9 @@ See [Setup for different CLIs](https://github.com/exa-labs/exa-mcp-server)
 https://github.com/oraios/serena
 
 Serena handles mapping a large codebase efficiently to save context window bloat and manage large-scale refactoring.
+
 - Codex: set the config in .codex in the project root to:
+
 ```toml
 [mcp_servers.serena]
 startup_timeout_sec = 60
