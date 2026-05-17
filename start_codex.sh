@@ -23,6 +23,6 @@ fi
 # requires logging in and setting secret (copy url this shows and login with Plus Subscription account):
 #  sbx secret set -g openai --oauth
 # you need this if in locked down mode in docker sandbox
-sbx policy allow network -g chatgpt.com:443
+sbx policy allow network $SANDBOX_NAME chatgpt.com:443
 
 sbx run codex -- --sandbox workspace-write --cd . -c analytics.enabled=false
