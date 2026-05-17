@@ -17,15 +17,15 @@
 # First-Time Setup:
 #
 # 1. Remove Google API-key secret so Gemini uses OAuth:
-#    sbx secret rm -g google
+#    sbx secret rm $SANDBOX_NAME google
 #
 # 2. Allow required network policies:
-#    sbx policy allow network registry.npmjs.org:443
-#    sbx policy allow network generativelanguage.googleapis.com:443
-#    sbx policy allow network oauth2.googleapis.com:443
-#    sbx policy allow network accounts.google.com:443
-#    sbx policy allow network play.googleapis.com:443
-#    sbx policy allow network cloudcode-pa.googleapis.com:443
+#    sbx policy allow network $SANDBOX_NAME registry.npmjs.org:443
+#    sbx policy allow network $SANDBOX_NAME generativelanguage.googleapis.com:443
+#    sbx policy allow network $SANDBOX_NAME oauth2.googleapis.com:443
+#    sbx policy allow network $SANDBOX_NAME accounts.google.com:443
+#    sbx policy allow network $SANDBOX_NAME play.googleapis.com:443
+#    sbx policy allow network $SANDBOX_NAME cloudcode-pa.googleapis.com:443
 #
 # 3. CD into the project root folder and start a generic shell sandbox in your project:
 #    sbx run shell . --name <sandbox-name>
@@ -34,7 +34,7 @@
 #    sudo apt upgrade -y
 #
 # 4. Inside the sandbox, install Gemini CLI:
-#    npm install -g @google/gemini-cli
+#    npm install $SANDBOX_NAME @google/gemini-cli
 #
 # 5. Start Gemini CLI:
 #    gemini
@@ -82,14 +82,14 @@ fi
 code .
 
 # Required policies for Gemini OAuth + Gemini CLI
-sbx policy allow network gemini-api-docs-mcp.dev:443
-sbx policy allow network ai.google.dev:443
-sbx policy allow network registry.npmjs.org:443
-sbx policy allow network generativelanguage.googleapis.com:443
-sbx policy allow network oauth2.googleapis.com:443
-sbx policy allow network accounts.google.com:443
-sbx policy allow network play.googleapis.com:443
-sbx policy allow network cloudcode-pa.googleapis.com:443
+sbx policy allow network $SANDBOX_NAME gemini-api-docs-mcp.dev:443
+sbx policy allow network $SANDBOX_NAME ai.google.dev:443
+sbx policy allow network $SANDBOX_NAME registry.npmjs.org:443
+sbx policy allow network $SANDBOX_NAME generativelanguage.googleapis.com:443
+sbx policy allow network $SANDBOX_NAME oauth2.googleapis.com:443
+sbx policy allow network $SANDBOX_NAME accounts.google.com:443
+sbx policy allow network $SANDBOX_NAME play.googleapis.com:443
+sbx policy allow network $SANDBOX_NAME cloudcode-pa.googleapis.com:443
 
 # Reuse existing sandbox if it already exists
 if sbx ls | grep -q "$SANDBOX_NAME"; then

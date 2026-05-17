@@ -16,8 +16,12 @@ There is an empty `src/` folder where project files and source code can live. It
     - To change this anytime, run: `sbx policy reset`
       - To configure additional policies, run:
       ```shell
-      sbx policy allow network <host>
-      sbx policy deny network <host>
+      # global setter
+      sbx policy allow network -g <host>
+      sbx policy deny network -g <host>
+
+      # scoped to a sandbox:
+      sbx policy allow network $SANDBOX_NAME <host>
       ```
       - remove policies with `sbx policy rm network --id c4164c09-b43e-429e-a528-ceb034d63028` (don't include the local: or prepended string with the id)
 - Homebrew (macOS)
