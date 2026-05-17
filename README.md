@@ -174,6 +174,26 @@ See [Setup for different CLIs](https://github.com/exa-labs/exa-mcp-server)
 https://github.com/oraios/serena
 
 Serena handles mapping a large codebase efficiently to save context window bloat and manage large-scale refactoring.
+- Codex: set the config in .codex in the project root to:
+```toml
+[mcp_servers.serena]
+startup_timeout_sec = 60
+command = "uv"
+args = [
+  "tool",
+  "run",
+  "--python",
+  "3.13",
+  "--from",
+  "serena-agent@latest",
+  "--prerelease=allow",
+  "serena",
+  "start-mcp-server",
+  "--project-from-cwd",
+  "--context=codex",
+  "--open-web-dashboard=false"
+]
+```
 
 - Gemini CLI: Update .gemini/settings.json to add it and pull from git with uv
 
